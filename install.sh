@@ -12,7 +12,7 @@ RootCheck()
 Welcome()
 {
 	echo "*************************************************************************";
-	echo "EkoView Netbook Setup for Ubuntu (v1.15.7.6)";
+	echo "WSN XServe and EkoView Setup for Ubuntu 10.04 LTS";
 	echo "Welcome $CurrentUser"
 	echo "*************************************************************************";
 }
@@ -91,7 +91,7 @@ SourceList()
 	deb http://security.ubuntu.com/ubuntu lucid-security multiverse
 	deb-src http://security.ubuntu.com/ubuntu lucid-security multiverse" > /etc/apt/sources.list
 	echo "-->Sources list modified...";
-	##apt-get update
+	apt-get update
 	echo "Updated successfully !";
 	echo "";
 }
@@ -191,7 +191,7 @@ DownloadEkoView()
 		echo "Installer available !";
 		cp EkoView-2.4.32.tar.gz /usr/xbow/tmp
 	else
-		wget http://unisense.ceastech.org/download/EkoView-2.4.32.tar.gz -P /usr/xbow/tmp
+		wget http://unisense.ceastech.com/download/EkoView-2.4.32.tar.gz -P /usr/xbow/tmp
 		echo "EkoView download successful !";
 	fi
 	echo "";
