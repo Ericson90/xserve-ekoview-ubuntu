@@ -12,7 +12,7 @@ RootCheck()
 Welcome()
 {
 	echo "*************************************************************************";
-	echo "WSN XServe and EkoView Setup for Ubuntu 10.04 LTS";
+	echo "EkoView Netbook Setup for Ubuntu 12.04 LTS";
 	echo "Welcome $CurrentUser"
 	echo "*************************************************************************";
 }
@@ -20,7 +20,7 @@ Welcome()
 Requirement()
 {
 	echo "*** This setup written for machines with the following specifications ***"
-	echo "        OS  : Ubuntu 10.4 LTS (Lucid) only"
+	echo "        OS  : Ubuntu 12.04 LTS (Precise Pangolin) only"
 	echo "        CPU : Intel Atom 1.6 GHz and above"
 	echo "        RAM : 512 MB and above"
 	echo "        HDD : 3.5 GB (Minimum)"
@@ -28,7 +28,7 @@ Requirement()
 	echo "FAILING to comply to above specification may cause certain component "
 	echo "MALFUNCTIONS !!!"
 	echo "*** This script will install required components and dependencies to"
-	echo "    run XServe and EkoView on Linux OS Ubuntu 10.04 LTS (Lucid) ***"
+	echo "    run XServe and EkoView on Linux OS Ubuntu 12.04 LTS (Precise Pangolin) ***"
 	echo "*** Recommended to run this script for initial setup on fresh OS ***"
 	echo ""
 }
@@ -36,61 +36,6 @@ Requirement()
 SourceList()
 {
 	echo "Updating source list...";
-	rm /etc/apt/sources.list
-	echo "#deb cdrom:[Ubuntu 10.04.4 LTS _Lucid Lynx_ - Release i386 (20120214.2)]/ lucid$
-	# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
-	# newer versions of the distribution.
-
-	deb http://us.archive.ubuntu.com/ubuntu/ lucid main restricted
-	deb-src http://us.archive.ubuntu.com/ubuntu/ lucid main restricted
-
-	## Major bug fix updates produced after the final release of the
-	## distribution.
-	deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates main restricted
-	deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates main restricted
-
-	## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu
-	## team. Also, please note that software in universe WILL NOT receive any
-	## review or updates from the Ubuntu security team.
-	deb http://us.archive.ubuntu.com/ubuntu/ lucid universe
-	deb-src http://us.archive.ubuntu.com/ubuntu/ lucid universe
-	deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe
-	deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates universe
-
-	## N.B. software from this repository is ENTIRELY UNSUPPORTED by the Ubuntu 
-	## team, and may not be under a free licence. Please satisfy yourself as to 
-	## your rights to use the software. Also, please note that software in 
-	## multiverse WILL NOT receive any review or updates from the Ubuntu
-	## security team.
-	deb http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
-	deb-src http://us.archive.ubuntu.com/ubuntu/ lucid multiverse
-	deb http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
-	deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-updates multiverse
-
-	## Uncomment the following two lines to add software from the 'backports'
-	## repository.
-	## N.B. software from this repository may not have been tested as
-	## extensively as that contained in the main release, although it includes
-	## newer versions of some applications which may provide useful features.
-	## Also, please note that software in backports WILL NOT receive any review
-	## or updates from the Ubuntu security team.
-	# deb http://us.archive.ubuntu.com/ubuntu/ lucid-backports main restricted univ$
-	# deb-src http://us.archive.ubuntu.com/ubuntu/ lucid-backports main restricted $
-
-	## Uncomment the following two lines to add software from Canonical's
-	## 'partner' repository.
-	## This software is not part of Ubuntu, but is offered by Canonical and the
-	## respective vendors as a service to Ubuntu users.
-	deb http://archive.canonical.com/ubuntu lucid partner
-	deb-src http://archive.canonical.com/ubuntu lucid partner
-
-	deb http://security.ubuntu.com/ubuntu lucid-security main restricted
-	deb-src http://security.ubuntu.com/ubuntu lucid-security main restricted
-	deb http://security.ubuntu.com/ubuntu lucid-security universe
-	deb-src http://security.ubuntu.com/ubuntu lucid-security universe
-	deb http://security.ubuntu.com/ubuntu lucid-security multiverse
-	deb-src http://security.ubuntu.com/ubuntu lucid-security multiverse" > /etc/apt/sources.list
-	echo "-->Sources list modified...";
 	apt-get update
 	echo "Updated successfully !";
 	echo "";
@@ -191,7 +136,7 @@ DownloadEkoView()
 		echo "Installer available !";
 		cp EkoView-2.4.32.tar.gz /usr/xbow/tmp
 	else
-		wget http://unisense.ceastech.com/download/EkoView-2.4.32.tar.gz -P /usr/xbow/tmp
+		wget https://unisense.ceastech.org/download/EkoView-2.4.32.tar.gz -P /usr/xbow/tmp
 		echo "EkoView download successful !";
 	fi
 	echo "";
@@ -230,21 +175,43 @@ ConfigureApache()
 	cp -v /usr/xbow/xserve-2.4.32/apache2/default /etc/apache2/sites-available
 	echo "Configuring environment...";
 	rm /etc/apache2/envvars
-	echo "# envvars - default environment variables for apache2ctl
+	echo '# envvars - default environment variables for apache2ctl
 
-	# Since there is no sane way to get the parsed apache2 config in scripts, some
-	# settings are defined via environment variables and then used in apache2ctl,
-	# /etc/init.d/apache2, /etc/logrotate.d/apache2, etc.
-	export APACHE_RUN_USER=$CurrentUser
-	export APACHE_RUN_GROUP=$CurrentUser
-	export APACHE_PID_FILE=/var/run/apache2.pid
+# this wont be correct after changing uid
+unset HOME
 
-	## The locale used by some modules like mod_dav
-	export LANG=C
-	## Uncomment the following line to use the system default locale instead:
-	#. /etc/default/locale
+# for supporting multiple apache2 instances
+if [ "${APACHE_CONFDIR##/etc/apache2-}" != "${APACHE_CONFDIR}" ] ; then
+        SUFFIX="-${APACHE_CONFDIR##/etc/apache2-}"
+else
+        SUFFIX=
+fi
 
-	export LANG" > /etc/apache2/envvars
+# Since there is no sane way to get the parsed apache2 config in scripts, some
+# settings are defined via environment variables and then used in apache2ctl,
+# /etc/init.d/apache2, /etc/logrotate.d/apache2, etc.
+export APACHE_RUN_USER=$CurrentUser
+export APACHE_RUN_GROUP=$CurrentUser
+export APACHE_PID_FILE=/var/run/apache2.pid
+export APACHE_RUN_DIR=/var/run/apache2
+export APACHE_LOCK_DIR=/var/lock/apache2
+# Only /var/log/apache2 is handled by /etc/logrotate.d/apache2.
+export APACHE_LOG_DIR=/var/log/apache2
+
+## The locale used by some modules like mod_dav
+export LANG=C
+## Uncomment the following line to use the system default locale instead:
+## /etc/default/locale
+
+export LANG
+
+## The command to get the status for "apache2ctl status".
+## Some packages providing "www-browser" need "--dump" instead of "-dump".
+#export APACHE_LYNX="www-browser -dump"
+
+## If you need a higher file descriptor limit, uncomment and adjust the
+## following line (default is 8192):
+#APACHE_ULIMIT_MAX_FILES="ulimit -n 65536"' > /etc/apache2/envvars
 	chown -R $CurrentUser:$CurrentUser /var/lock/apache2
 	service apache2 start
 	echo "Apache server configuration done !";
@@ -410,7 +377,7 @@ echo "";
 echo "*************************************************************************";
 echo "";
 echo "......................................";
-echo "...Updating Ubuntu 10.4 LTS (Lucid)...";
+echo "...Updating Ubuntu 12.04 LTS (Precise Pangolin)...";
 echo "......................................";
 SourceList
 echo "......................................";
@@ -481,3 +448,6 @@ echo "Installation was cancelled by user !";
 fi 
 
 Footer
+#######################
+###  End Installer  ###
+#######################
