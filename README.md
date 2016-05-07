@@ -1,4 +1,4 @@
-WSN XServe and eKoview 2.x installer for Ubuntu 10.04 LTS
+WSN XServe and eKoview 2.x installer for Ubuntu 10.04 LTS or Ubuntu 12.04 LTS
 
 Introduction<br>
 The script will try mimic the actual xServe and eKoView system implementation that comes with Memsic Netbook.<br>
