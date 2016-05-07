@@ -5,7 +5,7 @@
 The script will try mimic the actual xServe and eKoView system implementation that comes with Memsic Netbook.<br>
 Please open the bash file in text editor and through the code before executing...<br>
 You must be with root privilege to execute the code since many new packages will be installed.<br>
-> sudo bash install-u10.sh (For Ubuntu 10.04 LTS)
+> sudo bash install-u10.sh (For Ubuntu 10.04 LTS)<br>
 > sudo bash install-u12.sh (For Ubuntu 12.04 LTS)
 
 ### REQUIREMENT
@@ -14,14 +14,14 @@ You must be with root privilege to execute the code since many new packages will
 - Ubuntu 10.04 LTS or Ubuntu 12.04 LTS
 
 ### HOW TO INSTALL (sudo or root permission needed)
-1. Run the installer with command below
-> sudo bash install-u10.sh (For Ubuntu 10.04 LTS)
+1. Run the installer with command below<br>
+> sudo bash install-u10.sh (For Ubuntu 10.04 LTS)<br>
 > sudo bash install-u12.sh (For Ubuntu 12.04 LTS)
 
 ### HOW IT WORKS
 The script will try mimic the actual xServe and eKoView system implementation that comes with Memsic Netbook.<br>
 #### For Ubuntu 10.04,
-> sudo bash install-u10.sh (For Ubuntu 10.04 LTS)
+> **_sudo bash install-u10.sh_** (For Ubuntu 10.04 LTS)
 - You must be root
 - The source.list file will replaced to read from archive links since the support for Ubuntu 10.04 long terminated.
 - Then updating the list for latest packages
@@ -35,7 +35,7 @@ The script will try mimic the actual xServe and eKoView system implementation th
 - TeamViever will be installed as well for easy access from PC, you may skip this if not required.
 
 #### For Ubuntu 12.04,
-> sudo bash install-u12.sh (For Ubuntu 12.04 LTS)
+> **_sudo bash install-u12.sh_** (For Ubuntu 12.04 LTS)
 - You must be root
 - Then updating the list for latest packages
 - Next, long list of dependency packages will be installed automatically to install xServe
@@ -50,15 +50,15 @@ The script will try mimic the actual xServe and eKoView system implementation th
 ### VERIFY INSTALLATION
 1. Check xServe crontab
  -  xServe added to crontab automatically to check every minute for xServe running.
- -  Run this command to see if it's added, **_sudo crontab -l_**
-#### You should see this xServe entries below,
+ -  Run this command to see if it's added, **_sudo crontab -l_**<br>
+#### You should see this xServe entries below,<br>
 > 30 * * * * /usr/xbow/xserve/scripts/netbook/serverwatch<br>
 > @reboot /usr/xbow/xserve/scripts/netbook/serverwatch<br>
 > * * * * * /usr/xbow/xserve/scripts/netbook/xservewatch<br>
 > 0 * * * * /usr/xbow/xserve/scripts/netbook/xservewatchhour # JOB_ID_1<br>
 2. Check eKoView website
  -  Apache HTTP Server will be installed and configured to run eKoView.
- -  eKoView can be accessed from internet browser at ' http://localhost/web/index.html '
+ -  eKoView can be accessed from internet browser at **_http://localhost/web/index.html_**
  -  You can add nodes from the eKoView interface. **User : _admin_ Pass : _memsic_**
  
 ![alt text](https://unisense.ceastech.com/download/Interface.png "PC")
