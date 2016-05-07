@@ -46,10 +46,10 @@ The script will try mimic the actual xServe and eKoView system implementation th
  -  xServe added to crontab automatically to check every minute for xServe running.
  -  Run this command to see if it's added, ' sudo crontab -l '
 #### You should see this xServe entries...
-30 * * * * /usr/xbow/xserve/scripts/netbook/serverwatch<br>
-@reboot /usr/xbow/xserve/scripts/netbook/serverwatch<br>
-* * * * * /usr/xbow/xserve/scripts/netbook/xservewatch<br>
-0 * * * * /usr/xbow/xserve/scripts/netbook/xservewatchhour # JOB_ID_1<br>
+> 30 * * * * /usr/xbow/xserve/scripts/netbook/serverwatch<br>
+> @reboot /usr/xbow/xserve/scripts/netbook/serverwatch<br>
+> * * * * * /usr/xbow/xserve/scripts/netbook/xservewatch<br>
+> 0 * * * * /usr/xbow/xserve/scripts/netbook/xservewatchhour # JOB_ID_1<br>
 2. Check eKoView website
  -  Apache HTTP Server will be installed and configured to run eKoView.
  -  eKoView can be accessed from internet browser at ' http://localhost/web/index.html '
@@ -59,7 +59,12 @@ The script will try mimic the actual xServe and eKoView system implementation th
 ### REAL IMPLEMENTATION
 #### Website - UniSense : IoT for Environmental Sensing
 **_https://unisense.ceastech.com/_**
-![alt text](https://unisense.ceastech.com/download/FullMap.png "Web")
+![alt text](https://unisense.ceastech.com/download/FullMap.jpg "Web")
+
+### PUBLICATION
+1. IEEE Sensor 2015
+_E. Kanagaraj, L. M. Kamarudin, A. Zakaria, R. Gunasagaran and A. Y. M. Shakaff, "Cloud-based remote environmental monitoring system with distributed WSN weather stations," SENSORS, 2015 IEEE, Busan, 2015, pp. 1-4._
+**_http://dx.doi.org/10.1109/ICSENS.2015.7370449_**
 
 Contact Developer,<br>
 Ericson : _ericsonkanagaraj@gmail.com_
