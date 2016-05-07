@@ -51,7 +51,7 @@ The script will try mimic the actual xServe and eKoView system implementation th
 1. Check xServe crontab
  -  xServe added to crontab automatically to check every minute for xServe running.
  -  Run this command to see if it's added, **_sudo crontab -l_**<br>
-#### You should see this xServe entries below,<br>
+You should see this xServe entries below,<br>
 > 30 * * * * /usr/xbow/xserve/scripts/netbook/serverwatch<br>
 > @reboot /usr/xbow/xserve/scripts/netbook/serverwatch<br>
 > * * * * * /usr/xbow/xserve/scripts/netbook/xservewatch<br>
