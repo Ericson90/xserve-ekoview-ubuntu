@@ -1,5 +1,5 @@
-# WSN XServe and eKoview 2.x installer
-## for Ubuntu 10.04 LTS or Ubuntu 12.04 LTS
+# WSN XServe and eKoview 2.4.32 installer
+## For Ubuntu 10.04 LTS or Ubuntu 12.04 LTS
 
 ### INTRODUCTION
 The script will try mimic the actual xServe and eKoView system implementation that comes with Memsic Netbook.<br>
@@ -48,7 +48,7 @@ The script will try mimic the actual xServe and eKoView system implementation th
 - TeamViever will be installed as well for easy access from PC, you may skip this if not required.
 
 ### VERIFY INSTALLATION
-1. Check xServe crontab
+1. Check XServe crontab
  -  xServe added to crontab automatically to check every minute for xServe running.
  -  Run this command to see if it's added, **_sudo crontab -l_**<br>
 You should see this xServe entries below,<br>
@@ -56,7 +56,7 @@ You should see this xServe entries below,<br>
 > @reboot /usr/xbow/xserve/scripts/netbook/serverwatch<br>
 > * * * * * /usr/xbow/xserve/scripts/netbook/xservewatch<br>
 > 0 * * * * /usr/xbow/xserve/scripts/netbook/xservewatchhour # JOB_ID_1<br>
-2. Check eKoView website
+2. Check eKoview website
  -  Apache HTTP Server will be installed and configured to run eKoView.
  -  eKoView can be accessed from internet browser at **_http://localhost/web/index.html_**
  -  You can add nodes from the eKoView interface. **User : _admin_ Pass : _memsic_**
@@ -74,4 +74,5 @@ _E. Kanagaraj, L. M. Kamarudin, A. Zakaria, R. Gunasagaran and A. Y. M. Shakaff,
 **_http://dx.doi.org/10.1109/ICSENS.2015.7370449_**
 
 Contact Developer,<br>
-Ericson : _ericsonkanagaraj@gmail.com_
+Ericson : _ericsonkanagaraj@gmail.com_<br>
+[![Love it! Fund me on Gittip](https://camo.githubusercontent.com/4bc00155870998fa75cb33723a3d8ce771508203/687474703a2f2f696d672e736869656c64732e696f2f6769747469702f486f6d65627265772e737667)](https://gratipay.com/~Ericson/)
