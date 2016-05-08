@@ -136,7 +136,7 @@ DownloadEkoView()
 		echo "Installer available !";
 		cp EkoView-2.4.32.tar.gz /usr/xbow/tmp
 	else
-		wget https://unisense.ceastech.org/download/EkoView-2.4.32.tar.gz -P /usr/xbow/tmp
+		wget https://unisense.ceastech.com/download/EkoView-2.4.32.tar.gz -P /usr/xbow/tmp
 		echo "EkoView download successful !";
 	fi
 	echo "";
