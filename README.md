@@ -76,3 +76,9 @@ _E. Kanagaraj, L. M. Kamarudin, A. Zakaria, R. Gunasagaran and A. Y. M. Shakaff,
 Contact Developer,<br>
 Ericson : _ericsonkanagaraj@gmail.com_<br>
 [![Love it! Fund me on Gittip](https://camo.githubusercontent.com/4bc00155870998fa75cb33723a3d8ce771508203/687474703a2f2f696d672e736869656c64732e696f2f6769747469702f486f6d65627265772e737667)](https://gratipay.com/~Ericson/)
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="ZNVHQC73TAY4E">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
