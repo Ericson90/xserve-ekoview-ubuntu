@@ -13,6 +13,9 @@ You must be with root privilege to execute the code since many new packages will
 - Memsic WSN Nodes
 - Ubuntu 10.04 LTS or Ubuntu 12.04 LTS
 
+To check the Ubuntu version
+> lsb_release -a
+
 ### HOW TO INSTALL (sudo or root permission needed)
 1. Run the installer with command below<br>
 > sudo bash install-u10.sh (For Ubuntu 10.04 LTS)<br>
@@ -31,7 +34,7 @@ The script will try mimic the actual xServe and eKoView system implementation th
 - Next, the dependencies to install and run Apache HTTP Server to setup ekoView.
 - The cron job to run xServe will be added as well, you can view at ' sudo crontab -l '
 - Flash for Firefox will be installed too. However, the flash installer often fails, you can find the flash installer online.
-- The ekoView should be accessible from FireFox browser at ' 127.0.0.1 '
+- The ekoView should be accessible from FireFox browser at ' localhost '
 - TeamViever will be installed as well for easy access from PC, you may skip this if not required.
 
 #### For Ubuntu 12.04,
@@ -44,7 +47,7 @@ The script will try mimic the actual xServe and eKoView system implementation th
 - Next, the dependencies to install and run Apache HTTP Server to setup ekoView.
 - The cron job to run xServe will be added as well, you can view at ' sudo crontab -l '
 - Flash for Firefox will be installed too. However, the flash installer often fails, you can find the flash installer online.
-- The ekoView should be accessible from FireFox browser at ' 127.0.0.1 '
+- The ekoView should be accessible from FireFox browser at ' localhost '
 - TeamViever will be installed as well for easy access from PC, you may skip this if not required.
 
 ### VERIFY INSTALLATION
