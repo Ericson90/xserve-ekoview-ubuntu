@@ -1,8 +1,6 @@
 # WSN XServe and eKoview 2.4.32 installer
 ## For Ubuntu 10.04 LTS or Ubuntu 12.04 LTS
 
-[![npm Version][npm-image]][npm-url]
-[![npm Downloads][downloads-image]][downloads-url]
 [![MIT Licensed][license-image]][license-url]
 
 ### INTRODUCTION
@@ -83,3 +81,7 @@ _E. Kanagaraj, L. M. Kamarudin, A. Zakaria, R. Gunasagaran and A. Y. M. Shakaff,
 Contact Developer,<br>
 Ericson : _ericsonkanagaraj@gmail.com_<br>
 [![Love it! Fund me...](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZNVHQC73TAY4E)
+
+
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+[license-url]: https://raw.githubusercontent.com/ericsonk/xserve-ekoview-ubuntu/master/LICENSE
