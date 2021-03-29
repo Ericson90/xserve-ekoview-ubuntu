@@ -1,6 +1,10 @@
 # WSN XServe and eKoview 2.4.32 installer
 ## For Ubuntu 10.04 LTS or Ubuntu 12.04 LTS
 
+[![npm Version][npm-image]][npm-url]
+[![npm Downloads][downloads-image]][downloads-url]
+[![MIT Licensed][license-image]][license-url]
+
 ### INTRODUCTION
 The script will try mimic the actual xServe and eKoView system implementation that comes with Memsic Netbook.<br>
 Please open the bash file in text editor and through the code before executing...<br>
